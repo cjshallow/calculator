@@ -1,23 +1,15 @@
-const numberButtons = document.querySelectorAll('[data-number]')
-const operatorButtons = document.querySelectorAll('[data-operation]')
-//const equalsButton = getElementById('equalsBtn')
-//const clearButton = getElementById('clearBtn')
-//const decimalButton = getElementById('decimalBtn')
 
-
-
-//numberButtons.forEach((button) => 
-//  button.addEventListener('click', () => appendNumber(button.textContent))
-//  )
-
-//operatorButtons.forEach((button) => 
-//  button.addEventListener('click', () => setOperation(button.textContent))
-//  )
 
 // Psuedo Code // 
 
 // Create function so that when the Equals Button is clicked, the 
-// operate function runs with the two numbers inputting into the text field //
+// operate function runs with the two numbers input into the display
+// and prints the solution into the display
+
+// store the first number, then the operator, then the second number into variables
+// make those variables the arguments of the operate function
+// run the operate function when equals is clicked 
+// add something to the operate function to print the result into the display
 
 
 
