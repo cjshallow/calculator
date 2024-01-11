@@ -1,18 +1,30 @@
-body {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw; 
-    height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../calculator/img/annie-spratt-6a3nqQ1YwBw-unsplash.jpg);
+    color: white
 }
 
-.previous-screen {
+
+.calculator {
+    display: grid; 
+    border-radius: 20px;
+    padding: 16px;
+    grid-template-columns: repeat(4,66px);
+}
+
+.screen{
+    grid-column: span 4;
+    text-align: right;
+}
+
+#previous-input-text {
     border: 1px solid red;
     height: 20px;
 }
 
-.current-screen {
+#current-input-text {
     border: 1px solid blue;
     height: 50px;
 }

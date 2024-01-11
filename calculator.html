@@ -3,44 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
-    <script src="calculator.js" defer></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css"/>
   </head>
 
   <body>
     <h1>Calculator</h1>
-      <div class = "calculator-grid">
-        <div class = "main-row">
-          <div id = "screen">
-            <div class="previous-screen"></div>
-            <div class="current-screen"></div>
-          </div>
-          <button class="btn clear">AC</button>
-        </div>
-        <div class = "rows">
-          <button class="btn number">1</button>
-          <button class="btn number">2</button>
-          <button class="btn number">3</button>
-          <button class="btn operation">/</button>
-        </div>
-        <div class = "rows">
-          <button class="btn operation">*</button>
-          <button class="btn number">4</button>
-          <button class="btn number">5</button>
-          <button class="btn number">6</button>
-        </div>
-        <div class = "rows">
-          <button class="btn operation">+</button>
-          <button class="btn number">7</button>
-          <button class="btn number">8</button>
-          <button class="btn number">9</button>
-        </div>
-        <div class = "rows">
-          <button class="btn operation">-</button>
-          <button class="btn decimal">.</button>
-          <button class="btn equal">=</button>
-          <button class="btn number">0</button>
-        </div>
-        </div>
+    <div class = "container">
+      <div class = "calculator">
+          <div class="screen" id="previous-input-text"></div>
+          <div class="screen" id="current-input-text"></div>
+          <button class="btn" id="clear-btn">AC</button>
+          <button class="btn" id="delete-btn">DEL</button>
+          <button class="btn" data-operator>÷</button>
+          <button class="btn" data-number>1</button>
+          <button class="btn" data-number>2</button>
+          <button class="btn" data-number>3</button>
+          <button class="btn" data-operator>*</button>
+          <button class="btn" data-number>4</button>
+          <button class="btn" data-number>5</button>
+          <button class="btn" data-number>6</button>
+          <button class="btn" data-operator>+</button>
+          <button class="btn" data-number>7</button>
+          <button class="btn" data-number>8</button>
+          <button class="btn" data-number>9</button>
+          <button class="btn" data-operator>-</button>
+          <button class="btn" data-number>0</button>
+          <button class="btn" id="decimal-btn">.</button>
+          <button class="btn" id="equals-btn">=</button>
+      </div>
+    </div>
   </body>
 </html>
