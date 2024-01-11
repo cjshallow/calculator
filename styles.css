@@ -6,3 +6,13 @@ body {
     width: 100vw; 
     height: 100vh;
 }
+
+.previous-screen {
+    border: 1px solid red;
+    height: 20px;
+}
+
+.current-screen {
+    border: 1px solid blue;
+    height: 50px;
+}
