@@ -13,7 +13,7 @@ const decimalButton = document.getElementById('decimal-btn')
 const previousOperationScreen = document.getElementById('previous-input-text')
 const currentOperationScreen = document.getElementById('current-input-text')
 
-equalsButton.addEventListener('click', compute)
+equalsButton.addEventListener('click', operate)
 clearButton.addEventListener('click', clear)
 deleteButton.addEventListener('click', deleteValue)
 decimalButton.addEventListener('click', appendDecimal)
@@ -57,7 +57,7 @@ function setOperator(operator){
 
 
 const add = function(a,b) {
-  return Number(a) + Number(b) 
+  return a + b 
 	
 };
 
@@ -89,14 +89,28 @@ const divide =  function(a,b) {
 
 }
 
-function compute(){
-  if (previousOperationScreen.textContent.includes("+" || "-" || "*" || "÷")){
+function operate(){
+    b = currentOperationScreen.textContent
+    a = currentValue
     if (previousOperationScreen.textContent.includes("+")){
-      b = currentOperationScreen.textContent
-      a = currentValue
-      solution = 
+      solution = Number(a) + Number(b)
       currentOperationScreen.textContent = solution 
-      add()
-    } 
-  } 
-}
+      previousOperationScreen.textContent = ""
+    } else if (previousOperationScreen.textContent.includes("-")){
+      solution = Number(a) - Number(b)
+      currentOperationScreen.textContent = solution 
+      previousOperationScreen.textContent = ""
+    } else if (previousOperationScreen.textContent.includes("*")){
+      solution = Number(a) * Number(b)
+      currentOperationScreen.textContent = solution 
+      previousOperationScreen.textContent = ""
+    } else if (previousOperationScreen.textContent.includes("÷")){
+      solution = Number(a) / Number(b)
+      if (solution === Infinity) {
+        return
+      } else {
+      currentOperationScreen.textContent = solution 
+      previousOperationScreen.textContent = "" 
+      } 
+    }
+  }
