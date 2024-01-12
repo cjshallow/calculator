@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-image: url(../calculator/img/annie-spratt-6a3nqQ1YwBw-unsplash.jpg);
@@ -7,24 +6,33 @@
 }
 
 
-.calculator {
-    display: grid; 
-    border-radius: 20px;
-    padding: 16px;
-    grid-template-columns: repeat(4,66px);
+.container {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    min-height: 600px;
 }
 
 .screen{
-    grid-column: span 4;
     text-align: right;
 }
 
 #previous-input-text {
     border: 1px solid red;
-    height: 20px;
+    min-width: 400px;
+    min-height: 75px;
 }
 
 #current-input-text {
     border: 1px solid blue;
-    height: 50px;
+    min-width: 400px;
+    min-height: 100px;
+}
+
+.button-grid {
+    border: 1px solid green;
+    min-height: 425px;
+    /* display: grid; */
 }
