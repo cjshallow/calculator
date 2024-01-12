@@ -26,7 +26,7 @@ function clear(){
 }
 
 function deleteValue() {
-  currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0,-1)
+    currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0,-1)
 }
 
 function appendDecimal() {
@@ -36,11 +36,15 @@ function appendDecimal() {
 
 
 numberButtons.forEach((button) =>
-  button.addEventListener('click', () => appendNumber(button.textContent))
+  button.addEventListener('click', function() {
+    appendNumber(button.textContent)
+  })
 )
 
 operatorButtons.forEach((button) =>
-  button.addEventListener('click', () => setOperator(button.textContent))
+  button.addEventListener('click', function(){
+    setOperator(button.textContent)
+  })
 )
 
 function appendNumber(number) {
@@ -48,6 +52,7 @@ function appendNumber(number) {
 }
 
 function setOperator(operator){
+  if (currentOperation !== null) operate()
   currentValue = currentOperationScreen.textContent
   currentOperation = operator
   previousOperationScreen.textContent = `${currentValue} ${operator}`
@@ -56,61 +61,35 @@ function setOperator(operator){
 
 
 
-const add = function(a,b) {
-  return a + b 
-	
-};
-
-const subtract = function(a,b) {
-  return a - b 
-	
-};
-
-const sum = function(array) {
-  if(array.length === 0) {
-    return 0
-  } else {
-    let arrSum = array.reduce((sum, current) => sum + current);
-    return arrSum;
-  }
-};
-
-const multiply = function(a,b) {
-  return a*b 
-  
-};
-
-const divide =  function(a,b) {
-  if (b === 0) {
-    return "ERROR";
-  } else {
-    return a / b
-  };
-
-}
 
 function operate(){
     b = currentOperationScreen.textContent
     a = currentValue
+    if (previousOperationScreen.textContent.includes("=")) return
     if (previousOperationScreen.textContent.includes("+")){
       solution = Number(a) + Number(b)
-      currentOperationScreen.textContent = solution 
-      previousOperationScreen.textContent = ""
+      currentOperationScreen.textContent = roundSolution(solution)
+      previousOperationScreen.textContent = `${currentValue} ${"+"} ${Number(b)} ${"="}`
     } else if (previousOperationScreen.textContent.includes("-")){
       solution = Number(a) - Number(b)
-      currentOperationScreen.textContent = solution 
-      previousOperationScreen.textContent = ""
+      currentOperationScreen.textContent = roundSolution(solution)
+      previousOperationScreen.textContent = `${currentValue} ${"-"} ${Number(b)} ${"="}`
     } else if (previousOperationScreen.textContent.includes("*")){
       solution = Number(a) * Number(b)
-      currentOperationScreen.textContent = solution 
-      previousOperationScreen.textContent = ""
+      currentOperationScreen.textContent = roundSolution(solution) 
+      previousOperationScreen.textContent = `${currentValue} ${"*"} ${Number(b)} ${"="}`
     } else if (previousOperationScreen.textContent.includes("÷")){
       solution = Number(a) / Number(b)
       if (solution === Infinity) {
-        return
+        alert("You can't divide by 0")
       } else {
-      currentOperationScreen.textContent = solution 
-      previousOperationScreen.textContent = "" 
+      currentOperationScreen.textContent = roundSolution(solution) 
+      previousOperationScreen.textContent = `${currentValue} ${"÷"} ${Number(b)} ${"="}`
       } 
     }
+  }
+
+
+  function roundSolution(num){
+    return Math.round(num*1000)/1000
   }
