@@ -1,38 +1,91 @@
 * {
     padding: 0;
     box-sizing: border-box;
-    background-image: url(../calculator/img/annie-spratt-6a3nqQ1YwBw-unsplash.jpg);
-    color: white
+    /* background-image: url(../calculator/img/annie-spratt-6a3nqQ1YwBw-unsplash.jpg); */
+    background-color: rgb(80, 80, 80);
+    color: rgb(226, 226, 226);
+    font: "Lucida Console", monospace; 
 }
 
+h1 {
+    text-align: center;
+}
 
+#clear-btn {
+    min-width: 171px;
+}
+
+#delete-btn {
+    min-width: 171px;
+}
 .container {
     display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 400px;
-    min-height: 600px;
+    min-width: 300px;
+    min-height: 500px;
 }
 
 .screen{
     text-align: right;
+    border-radius: 20px;
+
+}
+
+.whole-screen {
+    border: 2px solid rgb(226, 226, 226);
+    border-radius: 10px;
 }
 
 #previous-input-text {
-    border: 1px solid red;
-    min-width: 400px;
-    min-height: 75px;
+    min-width: 300px;
+    min-height: 50px;
+    line-height: 45px;
 }
 
 #current-input-text {
-    border: 1px solid blue;
-    min-width: 400px;
-    min-height: 100px;
+    min-width: 300px;
+    min-height: 75px;
+    line-height: 70px;
 }
 
 .button-grid {
-    border: 1px solid green;
-    min-height: 425px;
+    border-right: 0.5px solid rgb(226, 226, 226);
+    border-left: 0.5px solid rgb(226, 226, 226);
+    border-bottom: 0.5px solid rgb(226, 226, 226);
+    border-top: 2px solid rgb(226, 226, 226);
+    min-height: 325px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
     /* display: grid; */
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    border: 2px solid rgb(226, 226, 226);
+    min-height: 60px;
+    min-width: 80px;
+    border-radius: 20px;
+    font-size: 1.7rem;
+    margin: 5px;
+
+}
+
+.btn:hover {
+    background-color: rgb(172, 172, 172);
+}
+
+.btn:active {
+    background-color: rgb(224, 224, 224);
+
 }
